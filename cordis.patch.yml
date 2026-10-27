@@ -1,0 +1,3 @@
+- insert:
+    - id: quick-chat
+      name: '@local/dsh-quick-chat'

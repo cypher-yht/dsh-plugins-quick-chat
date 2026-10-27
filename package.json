@@ -1,0 +1,48 @@
+{
+  "name": "@local/dsh-quick-chat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH Web 右下角悬浮聊天按钮：点开是独立聊天面板，支持多话题并行，不打断当前工作会话。",
+  "author": "cypher-yht",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "chat",
+    "quick-chat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypher-yht/dsh-plugins-quick-chat.git"
+  },
+  "homepage": "https://github.com/cypher-yht/dsh-plugins-quick-chat#readme",
+  "bugs": {
+    "url": "https://github.com/cypher-yht/dsh-plugins-quick-chat/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}
